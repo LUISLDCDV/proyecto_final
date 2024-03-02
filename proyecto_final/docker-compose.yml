@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  # Servicio para la aplicación Laravel
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nombre_del_contenedor
+    container_name: nombre_del_contenedor
+    restart: unless-stopped
+    working_dir: /var/www/html
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+
+  # Servicio para la base de datos MySQL
+  db:
+    image: mysql:5.7
+    container_name: nombre_de_db_contenedor
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nombre_de_la_db
+      MYSQL_ROOT_PASSWORD: contraseña_root
+      MYSQL_USER: usuario_db
+      MYSQL_PASSWORD: contraseña_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
