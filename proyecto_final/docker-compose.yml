@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nombre_del_contenedor
-    container_name: nombre_del_contenedor
+    image: tidy
+    container_name: tidy_contenedor
     restart: unless-stopped
     working_dir: /var/www/html
     ports:
