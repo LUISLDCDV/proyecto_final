@@ -8,7 +8,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN a2enmod rewrite
 
 # Establece el directorio de trabajo en el directorio de la aplicación Laravel
-WORKDIR /var/www/html
+WORKDIR /var/www/html/proyecto_final/proyecto_final
 
 # Copia los archivos del proyecto al contenedor
 COPY . .
