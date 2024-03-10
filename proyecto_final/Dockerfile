@@ -17,7 +17,8 @@ COPY . .
 RUN chown -R www-data:www-data storage
 
 # Instala Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN sudo apt-get update
+RUN sudo apt-get install docker-compose-plugin
 
 # Instala las dependencias de Composer
 RUN composer install --no-scripts --no-interaction --no-autoloader --prefer-dist
