@@ -20,10 +20,10 @@ RUN chown -R www-data:www-data storage
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Instala las dependencias de Composer
-RUN composer install --no-scripts --no-interaction --no-autoloader
+RUN composer install --no-scripts --no-interaction --no-autoloader --prefer-dist
 
 # Genera la carga automática de Composer
-RUN composer dump-autoload --no-scripts --optimize
+RUN composer dump-autoload --optimize
 
 # Expone el puerto 80 para la aplicación Laravel
 EXPOSE 80
