@@ -21,10 +21,10 @@ services:
     container_name: nombre_de_db_contenedor
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: nombre_de_la_db
-      MYSQL_ROOT_PASSWORD: contraseña_root
-      MYSQL_USER: usuario_db
-      MYSQL_PASSWORD: contraseña_db
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: app
+      MYSQL_USER: host
+      MYSQL_PASSWORD: 
     ports:
       - "3306:3306"
     volumes:
